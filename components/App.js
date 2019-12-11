@@ -3,8 +3,8 @@ export default ({ children }) => (
     {children}
     <style jsx global>{`
       * {
-        font-family: Menlo, Monaco, 'Lucida Console', 'Liberation Mono',
-          'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New',
+        font-family: Menlo, Monaco, "Lucida Console", "Liberation Mono",
+          "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New",
           monospace, serif;
       }
       body {
@@ -12,7 +12,7 @@ export default ({ children }) => (
         padding: 25px 50px;
       }
       a {
-        color: #22bad9;
+        color: #043d48;
       }
       p {
         font-size: 14px;
@@ -24,7 +24,7 @@ export default ({ children }) => (
       }
       button {
         align-items: center;
-        background-color: #22bad9;
+        background-color: #043d48;
         border: 0;
         color: white;
         display: flex;
@@ -42,4 +42,4 @@ export default ({ children }) => (
       }
     `}</style>
   </main>
-)
+);

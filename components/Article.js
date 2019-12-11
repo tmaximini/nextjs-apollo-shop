@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/react-hooks";
-import { NetworkStatus } from "apollo-client";
+
+import Head from "next/head";
 import gql from "graphql-tag";
 import ErrorMessage from "./ErrorMessage";
 
@@ -43,15 +44,23 @@ export default function Article({ id }) {
 
   return (
     <section>
+      <Head>
+        <title>
+          {product.brand} - {product.name}
+        </title>
+      </Head>
+      <h2>{product.brand}</h2>
       <h1>{product.name}</h1>
-      <h3>{product.brand}</h3>
       <h4>
         {product.price.amount} {product.price.currency}
       </h4>
       <p dangerouslySetInnerHTML={{ __html: product.description.short }}>{}</p>
-      {product.images.map(img => (
-        <img key={img.filename} src={img.src.small} alt={product.name} />
-      ))}
+      {product.images.map(
+        img =>
+          img.type !== "gallery" && (
+            <img key={img.filename} src={img.src.small} alt={product.name} />
+          )
+      )}
       <style jsx>{`
         section {
           padding-bottom: 20px;
