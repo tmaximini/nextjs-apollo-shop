@@ -8,6 +8,9 @@ export const GET_PRODUCT_BY_ID = gql`
     product(id: $id) {
       name
       brand
+      description {
+        short
+      }
       slug
       price {
         amount
@@ -45,6 +48,7 @@ export default function Article({ id }) {
       <h4>
         {product.price.amount} {product.price.currency}
       </h4>
+      <p dangerouslySetInnerHTML={{ __html: product.description.short }}>{}</p>
       {product.images.map(img => (
         <img key={img.filename} src={img.src.small} alt={product.name} />
       ))}
